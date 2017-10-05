@@ -572,7 +572,7 @@ remove_device (GUPnPLinuxContextManager *self,
 static void
 receive_netlink_message (GUPnPLinuxContextManager *self, GError **error)
 {
-        static char buf[4096];
+        char buf[4096] = {0};
         static const int bufsize = 4096;
 
         gssize len;
